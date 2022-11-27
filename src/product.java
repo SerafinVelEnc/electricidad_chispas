@@ -1,4 +1,4 @@
-public class product {
+public class product implements salesLine{
     private Integer productCode;
     private String name;
     private String mark;
@@ -12,10 +12,6 @@ public class product {
 
     public void setProductCode(Integer productCode) {
         this.productCode = productCode;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
@@ -38,19 +34,26 @@ public class product {
         this.model = model;
     }
 
-    public Integer getVatRate() {
-        return vatRate;
+    public void setCost(Integer cost) {
+        this.cost = cost;
     }
 
     public void setVatRate(Integer vatRate) {
         this.vatRate = vatRate;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public Integer getCost() {
         return cost;
     }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
+    @Override
+    public Integer getVatRate() {
+        return vatRate;
     }
 }
