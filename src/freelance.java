@@ -1,4 +1,4 @@
-public class freelance {
+public class freelance implements customer{
 
     private Integer customerCode;
     private String name;
@@ -10,58 +10,82 @@ public class freelance {
     private String email;
     private String phone;
 
-    public Integer getCustomerCode(){
-        return customerCode;
+    public void setCustomerCode(Integer customerCode) {
+        this.customerCode = customerCode;
     }
-    public void setCustomerCode(Integer customerCode){
-        this.customerCode=customerCode;
+
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
-    public String getSurname(){
+
+    public String getSurname() {
         return surname;
     }
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    public String getDni(){
+
+    public String getDni() {
         return dni;
     }
+
     public void setDni(String dni) {
         this.dni = dni;
     }
-    public String getAddress() {
-        return address;
-    }
+
     public void setAddress(String address) {
         this.address = address;
     }
-    public String getCity() {
-        return city;
-    }
+
     public void setCity(String city) {
         this.city = city;
     }
-    public String getProvince() {
-        return province;
-    }
+
     public void setProvince(String province) {
         this.province = province;
     }
-    public String getEmail() {
-        return email;
-    }
+
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getPhone() {
-        return phone;
-    }
+
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public Integer getCustomerCode() {
+        return this.customerCode;
+    }
+
+    @Override
+    public String getName() {
+        return this.name+" "+surname;
+    }
+
+    @Override
+    public String getAddress() {
+        return this.address;
+    }
+
+    @Override
+    public String getCity() {
+        return this.city;
+    }
+
+    @Override
+    public String getProvince() {
+        return this.province;
+    }
+
+    @Override
+    public String getEmail() {
+        return this.email;
+    }
+
+    @Override
+    public String getPhone() {
+        return this.phone;
     }
 }
